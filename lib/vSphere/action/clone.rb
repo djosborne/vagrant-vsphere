@@ -109,7 +109,7 @@ module VagrantPlugins
 
           # assign the private network IP to the NIC
           private_networks.each_index do |idx|
-            customization_spec.nicSettingMap[idx].adapter.ip.ipAddress = private_networks[idx][1][:ip]
+            customization_spec.nicSettingMap[idx + 1].adapter.ip.ipAddress = private_networks[idx][1][:ip]
           end
 
           customization_spec
